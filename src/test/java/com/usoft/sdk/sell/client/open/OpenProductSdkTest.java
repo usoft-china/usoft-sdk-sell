@@ -52,6 +52,7 @@ public class OpenProductSdkTest {
         req.setPageSize(10);
         req.setPageNumber(1);
         req.setKeywords("1");
+        req.setStatus(20);
         PagingProductResp resp = productSdk.pagingProduct(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }
@@ -80,6 +81,16 @@ public class OpenProductSdkTest {
         req.addCode("PD210604277672775900");
         req.addCode("PD210604277738487401");
         BatchRevokeProductResp resp = productSdk.batchRevokeProduct(req);
+        System.out.println(ProtoBufUtil.toJSON(resp));
+    }
+
+    @Test
+    public void updateProductReserve() throws Exception {
+        UpdateProductReserveReq.Builder req = UpdateProductReserveReq.newBuilder();
+        req.setCode("PD210604277672775900");
+        req.setReserve(1);
+        req.setType(10);
+        UpdateProductReserveResp resp = productSdk.updateProductReserve(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }
 }

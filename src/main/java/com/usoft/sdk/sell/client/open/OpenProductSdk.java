@@ -105,4 +105,18 @@ public class OpenProductSdk extends BaseSdk {
 		BatchRevokeProductResp.Builder resp = ProtoBufUtil.toProtoBuf(BatchRevokeProductResp.newBuilder(), respJson);
 		return resp.build();
 	}
+
+	/**
+	 * 更新产品库存
+	 *
+	 * @param req
+	 * @return
+	 */
+	public UpdateProductReserveResp updateProductReserve(UpdateProductReserveReq.Builder req) throws Exception {
+		String url = baseUrl + "/open/product/reserve/update";
+		String paramJson = genSignToJson(req);
+		String respJson = HttpUtil.doPost(url, paramJson, timeout);
+		UpdateProductReserveResp.Builder resp = ProtoBufUtil.toProtoBuf(UpdateProductReserveResp.newBuilder(), respJson);
+		return resp.build();
+	}
 }
