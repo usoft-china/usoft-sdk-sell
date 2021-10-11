@@ -93,4 +93,44 @@ public class OpenProductSdkTest {
         UpdateProductReserveResp resp = productSdk.updateProductReserve(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }
+
+    @Test
+    public void listCategory() throws Exception {
+        ListCategoryReq.Builder req = ListCategoryReq.newBuilder();
+        // 父级类目编号
+        req.setParentCode("CY210810856542965846");
+        //类目组编号
+        req.setCategoryGroupCode("");
+
+        ListCategoryResp resp = productSdk.listCategory(req);
+        System.out.println(ProtoBufUtil.toJSON(resp));
+    }
+
+    @Test
+    public void listCategoryGroup() throws Exception {
+        ListCategoryGroupReq.Builder req = ListCategoryGroupReq.newBuilder();
+
+        ListCategoryGroupResp resp = productSdk.listCategoryGroup(req);
+        System.out.println(ProtoBufUtil.toJSON(resp));
+    }
+
+    @Test
+    public void listCategoryProperty() throws Exception {
+        ListCategoryPropertyReq.Builder req = ListCategoryPropertyReq.newBuilder();
+        // 类目编号
+        req.setCategoryCode("");
+
+        ListCategoryPropertyResp resp = productSdk.listCategoryProperty(req);
+        System.out.println(ProtoBufUtil.toJSON(resp));
+    }
+
+    @Test
+    public void searchCategory() throws Exception {
+        SearchCategoryReq.Builder req = SearchCategoryReq.newBuilder();
+        //关键词（类目名称）
+        req.setKeywords("红酒");
+
+        SearchCategoryResp resp = productSdk.searchCategory(req);
+        System.out.println(ProtoBufUtil.toJSON(resp));
+    }
 }

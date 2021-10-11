@@ -93,12 +93,6 @@ public class OpenSellerSdkTest {
         req.setContactMobile("98798");
         //配送方式 0:物流配送 10:商家配送
         req.setDeliveryCategory(0);
-        //开户名称
-        req.setBankAccountName("123");
-        //银行卡号
-        req.setBankAccount("321");
-        //开户行
-        req.setBankName("666");
         //企业uu
         req.setEnuu(10050905);
 

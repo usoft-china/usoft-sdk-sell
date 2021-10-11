@@ -119,4 +119,60 @@ public class OpenProductSdk extends BaseSdk {
 		UpdateProductReserveResp.Builder resp = ProtoBufUtil.toProtoBuf(UpdateProductReserveResp.newBuilder(), respJson);
 		return resp.build();
 	}
+
+	/**
+	 * 查询类目列表
+	 *
+	 * @param req
+	 * @return
+	 */
+	public ListCategoryResp listCategory(ListCategoryReq.Builder req) throws Exception {
+		String url = baseUrl + "/open/category/list";
+		Map<String, String> params = genSignToMap(req);
+		String respJson = HttpUtil.doGet(url, params, timeout);
+		ListCategoryResp.Builder resp = ProtoBufUtil.toProtoBuf(ListCategoryResp.newBuilder(), respJson);
+		return resp.build();
+	}
+
+	/**
+	 * 查询类目组列表
+	 *
+	 * @param req
+	 * @return
+	 */
+	public ListCategoryGroupResp listCategoryGroup(ListCategoryGroupReq.Builder req) throws Exception {
+		String url = baseUrl + "/open/category/group/list";
+		Map<String, String> params = genSignToMap(req);
+		String respJson = HttpUtil.doGet(url, params, timeout);
+		ListCategoryGroupResp.Builder resp = ProtoBufUtil.toProtoBuf(ListCategoryGroupResp.newBuilder(), respJson);
+		return resp.build();
+	}
+
+	/**
+	 * 查询类目属性列表
+	 *
+	 * @param req
+	 * @return
+	 */
+	public ListCategoryPropertyResp listCategoryProperty(ListCategoryPropertyReq.Builder req) throws Exception {
+		String url = baseUrl + "/open/category/property/list";
+		Map<String, String> params = genSignToMap(req);
+		String respJson = HttpUtil.doGet(url, params, timeout);
+		ListCategoryPropertyResp.Builder resp = ProtoBufUtil.toProtoBuf(ListCategoryPropertyResp.newBuilder(), respJson);
+		return resp.build();
+	}
+
+	/**
+	 * 搜索类目
+	 *
+	 * @param req
+	 * @return
+	 */
+	public SearchCategoryResp searchCategory(SearchCategoryReq.Builder req) throws Exception {
+		String url = baseUrl + "/open/category/search";
+		Map<String, String> params = genSignToMap(req);
+		String respJson = HttpUtil.doGet(url, params, timeout);
+		SearchCategoryResp.Builder resp = ProtoBufUtil.toProtoBuf(SearchCategoryResp.newBuilder(), respJson);
+		return resp.build();
+	}
 }
