@@ -69,9 +69,13 @@ public class OpenProductSdkTest {
     @Test
     public void batchReleaseProduct() throws Exception {
         BatchReleaseProductReq.Builder req = BatchReleaseProductReq.newBuilder();
-        req.addCode("PD210604277672775900");
-        req.addCode("PD210604277738487401");
         BatchReleaseProductResp resp = productSdk.batchReleaseProduct(req);
+        ReleaseProduct.Builder builder = ReleaseProduct.newBuilder();
+        builder.setCode("PD210610331920062605");
+        builder.setPosition("123");
+        builder.setReserve(50000);
+        builder.setUnitPrice(999);
+        req.addProduct(builder);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }
 
