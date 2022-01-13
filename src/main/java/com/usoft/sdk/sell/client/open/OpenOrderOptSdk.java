@@ -46,21 +46,7 @@ public class OpenOrderOptSdk extends BaseSdk {
 		DeliverOrderResp.Builder resp = ProtoBufUtil.toProtoBuf(DeliverOrderResp.newBuilder(), respJson);
 		return resp.build();
 	}
-     
-	/**
-	 * 确认收款
-	 *
-	 * @param req
-	 * @return
-	 */
-	public OrderEnsurePayResp orderEnsurePay(OrderEnsurePayReq.Builder req) throws Exception {
-		String url = baseUrl + "/open/order/ensurepay";
-		String paramJson = genSignToJson(req);
-		String respJson = HttpUtil.doPost(url, paramJson, timeout);
-		OrderEnsurePayResp.Builder resp = ProtoBufUtil.toProtoBuf(OrderEnsurePayResp.newBuilder(), respJson);
-		return resp.build();
-	}
-     
+
 	/**
 	 * 订单收货
 	 *
@@ -74,19 +60,5 @@ public class OpenOrderOptSdk extends BaseSdk {
 		ReceiveOrderResp.Builder resp = ProtoBufUtil.toProtoBuf(ReceiveOrderResp.newBuilder(), respJson);
 		return resp.build();
 	}
-     
-	/**
-	 * 上传支付凭证
-	 *
-	 * @param req
-	 * @return
-	 */
-	public UploadPayFileResp uploadPayFile(UploadPayFileReq.Builder req) throws Exception {
-		String url = baseUrl + "/open/buyer/order/payfile/upload";
-		String paramJson = genSignToJson(req);
-		String respJson = HttpUtil.doPost(url, paramJson, timeout);
-		UploadPayFileResp.Builder resp = ProtoBufUtil.toProtoBuf(UploadPayFileResp.newBuilder(), respJson);
-		return resp.build();
-	}
-    
+
 }

@@ -40,16 +40,6 @@ public class OpenOrderOptSdkTest {
     }
     
     @Test
-    public void orderEnsurePay() throws Exception {
-        OrderEnsurePayReq.Builder req = OrderEnsurePayReq.newBuilder();
-        //订单编号
-        req.setCode("OR210701511136956512");
-
-        OrderEnsurePayResp resp = openOrderOptSdk.orderEnsurePay(req);
-        System.out.println(ProtoBufUtil.toJSON(resp));
-    }
-    
-    @Test
     public void receiveOrder() throws Exception {
         ReceiveOrderReq.Builder req = ReceiveOrderReq.newBuilder();
         //订单编号
@@ -58,17 +48,5 @@ public class OpenOrderOptSdkTest {
         ReceiveOrderResp resp = openOrderOptSdk.receiveOrder(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }
-    
-    @Test
-    public void uploadPayFile() throws Exception {
-        UploadPayFileReq.Builder req = UploadPayFileReq.newBuilder();
-        // 订单编号
-        req.setCode("OR210701511136956512");
-        // 支付凭证编号
-        req.addPayFileCode("");
 
-        UploadPayFileResp resp = openOrderOptSdk.uploadPayFile(req);
-        System.out.println(ProtoBufUtil.toJSON(resp));
-    }
-    
 }
