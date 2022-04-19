@@ -135,20 +135,6 @@ public class OpenProductSdk extends BaseSdk {
 	}
 
 	/**
-	 * 查询类目组列表
-	 *
-	 * @param req
-	 * @return
-	 */
-	public ListCategoryGroupResp listCategoryGroup(ListCategoryGroupReq.Builder req) throws Exception {
-		String url = baseUrl + "/open/category/group/list";
-		Map<String, String> params = genSignToMap(req);
-		String respJson = HttpUtil.doGet(url, params, timeout);
-		ListCategoryGroupResp.Builder resp = ProtoBufUtil.toProtoBuf(ListCategoryGroupResp.newBuilder(), respJson);
-		return resp.build();
-	}
-
-	/**
 	 * 查询类目属性列表
 	 *
 	 * @param req

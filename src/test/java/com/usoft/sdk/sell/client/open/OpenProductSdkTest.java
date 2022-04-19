@@ -103,18 +103,8 @@ public class OpenProductSdkTest {
         ListCategoryReq.Builder req = ListCategoryReq.newBuilder();
         // 父级类目编号
         req.setParentCode("CY210810856542965846");
-        //类目组编号
-        req.setCategoryGroupCode("");
 
         ListCategoryResp resp = productSdk.listCategory(req);
-        System.out.println(ProtoBufUtil.toJSON(resp));
-    }
-
-    @Test
-    public void listCategoryGroup() throws Exception {
-        ListCategoryGroupReq.Builder req = ListCategoryGroupReq.newBuilder();
-
-        ListCategoryGroupResp resp = productSdk.listCategoryGroup(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
     }
 
