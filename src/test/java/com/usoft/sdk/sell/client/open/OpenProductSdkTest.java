@@ -31,7 +31,7 @@ public class OpenProductSdkTest {
         AttachFile.Builder file = AttachFile.newBuilder();
         file.setName("11.jpg");
         file.setUrl("http://1812.img.pp.sohu.com.cn/images/blog/2009/11/18/18/8/125b6560a6ag214.jpg");
-        req.setImageAF(file);
+//        req.setImageAF(file);
         req.setCreatedTime("2021-06-01 10:00:00");
         CreateOrUpdateProductResp resp = productSdk.createOrUpdateProduct(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
