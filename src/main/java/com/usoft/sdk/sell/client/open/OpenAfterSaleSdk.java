@@ -18,6 +18,10 @@ public class OpenAfterSaleSdk extends BaseSdk {
 		super(baseUrl, secretKey);
 	}
 
+	public OpenAfterSaleSdk(String baseUrl, String secretId, String secretKey) {
+		super(baseUrl, secretId, secretKey);
+	}
+
 	public OpenAfterSaleSdk(String baseUrl, String secretKey, int timeout) {
 		super(baseUrl, secretKey, timeout);
 	}

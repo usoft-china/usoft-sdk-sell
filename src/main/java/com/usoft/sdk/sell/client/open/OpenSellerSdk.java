@@ -18,6 +18,10 @@ public class OpenSellerSdk extends BaseSdk {
 		super(baseUrl, secretKey);
 	}
 
+	public OpenSellerSdk(String baseUrl, String secretId, String secretKey) {
+		super(baseUrl, secretId, secretKey);
+	}
+
 	public OpenSellerSdk(String baseUrl, String secretKey, int timeout) {
 		super(baseUrl, secretKey, timeout);
 	}

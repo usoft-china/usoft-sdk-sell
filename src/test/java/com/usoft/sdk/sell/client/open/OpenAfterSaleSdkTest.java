@@ -13,7 +13,7 @@ public class OpenAfterSaleSdkTest {
     /**
      * 测试地址
      */
-    private OpenAfterSaleSdk openAfterSaleSdk = new OpenAfterSaleSdk("https://sellrest.uuzcc.cn", "J5jL6X5hdc6FpzOYhxPIzqXfFvmE6D8JWYRCBW7kjK4=");
+    private OpenAfterSaleSdk openAfterSaleSdk = new OpenAfterSaleSdk("https://sellrest.uuzcc.cn", "50000092","c49f7be6a861461ab951e55030055a5c");
     
     @Test
     public void applyAfterSale() throws Exception {

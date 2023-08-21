@@ -13,7 +13,7 @@ public class OpenOrderGetSdkTest {
     /**
      * 测试地址
      */
-    private OpenOrderGetSdk openOrderGetSdk = new OpenOrderGetSdk("https://sellrest.uuzcc.cn", "J5jL6X5hdc6FpzOYhxPIzqXfFvmE6D8JWYRCBW7kjK4=");
+    private OpenOrderGetSdk openOrderGetSdk = new OpenOrderGetSdk("https://sellrest.uuzcc.cn", "50000092","c49f7be6a861461ab951e55030055a5c");
     
     @Test
     public void getBuyerOrderDetail() throws Exception {
@@ -41,7 +41,7 @@ public class OpenOrderGetSdkTest {
     public void getSellerOrderDetail() throws Exception {
         GetSellerOrderDetailReq.Builder req = GetSellerOrderDetailReq.newBuilder();
         //订单编号
-        req.setCode("OR210618398674495919");
+        req.setCode("OR230725027604984473");
 
         GetSellerOrderDetailResp resp = openOrderGetSdk.getSellerOrderDetail(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
@@ -65,11 +65,11 @@ public class OpenOrderGetSdkTest {
         // 当前页码
         req.setPageNumber(1);
         //10：待支付，20：待收款，30：待发货，40：待收货，90：已取消
-        req.setStatus(0);
+        req.setStatus(30);
         //关键词（商品标题/订单号）
         req.setKeywords("");
         //企业enuu
-        req.setEnuu(10050624);
+        req.setEnuu(50000092);
         // 个人uu
         req.setUu(1000002821);
 
@@ -81,7 +81,7 @@ public class OpenOrderGetSdkTest {
     public void pagingSellerOrder() throws Exception {
         PagingSellerOrderReq.Builder req = PagingSellerOrderReq.newBuilder();
         //企业enuu
-        req.setEnuu(10050905);
+        req.setEnuu(50000089);
         // 每页条数
         req.setPageSize(10);
         // 当前页码

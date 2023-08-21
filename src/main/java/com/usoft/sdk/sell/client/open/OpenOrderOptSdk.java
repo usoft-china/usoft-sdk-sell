@@ -15,6 +15,10 @@ public class OpenOrderOptSdk extends BaseSdk {
 		super(baseUrl, secretKey);
 	}
 
+	public OpenOrderOptSdk(String baseUrl, String secretId, String secretKey) {
+		super(baseUrl, secretId, secretKey);
+	}
+
 	public OpenOrderOptSdk(String baseUrl, String secretKey, int timeout) {
 		super(baseUrl, secretKey, timeout);
 	}

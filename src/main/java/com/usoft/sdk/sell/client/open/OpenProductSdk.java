@@ -17,6 +17,10 @@ public class OpenProductSdk extends BaseSdk {
 		super(baseUrl, secretKey);
 	}
 
+	public OpenProductSdk(String baseUrl, String secretId, String secretKey) {
+		super(baseUrl, secretId, secretKey);
+	}
+
 	public OpenProductSdk(String baseUrl, String secretKey, int timeout) {
 		super(baseUrl, secretKey, timeout);
 	}

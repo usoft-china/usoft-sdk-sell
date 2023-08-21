@@ -14,7 +14,7 @@ public class OpenSellerSdkTest {
     /**
      * 测试地址
      */
-    private OpenSellerSdk openSellerSdk = new OpenSellerSdk("https://sellrest.uuzcc.cn", "J5jL6X5hdc6FpzOYhxPIzqXfFvmE6D8JWYRCBW7kjK4=");
+    private OpenSellerSdk openSellerSdk = new OpenSellerSdk("https://sellrest.uuzcc.cn", "50000092","c49f7be6a861461ab951e55030055a5c");
     
     @Test
     public void createOrModifySellerAdvert() throws Exception {
@@ -54,7 +54,7 @@ public class OpenSellerSdkTest {
     public void getSeller() throws Exception {
         GetSellerReq.Builder req = GetSellerReq.newBuilder();
         //企业uu
-        req.setEnuu(10050905);
+        req.setEnuu(50000092);
 
         GetSellerResp resp = openSellerSdk.getSeller(req);
         System.out.println(ProtoBufUtil.toJSON(resp));
